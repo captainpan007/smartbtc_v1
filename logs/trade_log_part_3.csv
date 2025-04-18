@@ -1,0 +1,4 @@
+symbol,action,price,amount,commission,slippage,pnl,timestamp,structure,regime
+BTC/USDT,buy,43156.497717,100,3236.7373287749997,2.157717,0,2023-12-27 16:00:00,trend_following,unknown
+BTC/USDT,buy,43431.0214425,100,3257.3266081875,2.1714425,0,2023-12-27 20:00:00,trend_following,unknown
+BTC/USDT,buy,42178.1088,100,3163.3581599999998,2.1088,0,2023-12-31 00:00:00,trend_following,unknown

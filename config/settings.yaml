@@ -1,0 +1,35 @@
+# === 📌 API Key 设置 ===
+binance:
+  api_key: "2XSf5FlitGgKgbvehDZ4lQZcbaOm4UWssZv8DYTNCsNUB9v5xPsodN6RW8grqIk7"
+  api_secret: "IfQqRWOZp1aKuXDVPhd7IWN0VkIIbKes4uBTG5iWlvwBwHBcAL3c2n7XnqWb4z4X"
+
+telegram:
+  bot_token: "8025067349:AAEbqJGcZ-CmINRF8YAUR4AXq30Vf096VuE"
+  chat_id: "-1002634329398"  # 可是群组ID或个人ID
+
+# === 📌 策略参数 ===
+strategy:
+  mean_reversion:
+    rsi_period: 14
+    rsi_buy: 30
+    rsi_sell: 70
+    bb_window: 20
+    bb_std: 2.0
+
+  trend_following:
+    fast_ma: 20
+    slow_ma: 50
+    adx_period: 14
+    adx_threshold: 25
+
+# === 📌 市场状态识别参数 ===
+market_state:
+  adx_period: 14
+  threshold: 25
+
+# === 📌 风控参数 ===
+risk:
+  atr_window: 14
+  sl_multiplier: 2.0         # 止损 = 2 * ATR
+  max_position_pct: 0.02     # 每笔最大持仓占比 2%
+  max_drawdown_pct: 0.2      # 最大回撤 20% 则暂停交易

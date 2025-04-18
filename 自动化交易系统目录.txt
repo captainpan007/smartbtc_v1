@@ -1,0 +1,27 @@
+smartbtc_v1/
+├── run_backtest.py               # 回测主程序
+├── run_live.py                   # 实盘运行入口
+├── config/
+│   └── settings.yaml             # 系统配置文件（参数、API等）
+├── core/                         # 核心逻辑模块
+│   ├── data_loader.py            # 数据加载模块
+│   ├── executor.py               # 交易执行模块（理论支持实盘下单）
+│   ├── market_state.py           # 市场状态建模
+│   ├── notifier.py               # 通知模块（Telegram等）
+│   ├── risk_manager.py           # 风控策略（止损、最大回撤等）
+│   ├── signal_generator.py       # 信号生成模块（调用策略）
+│   └── strategy_switcher.py      # 多策略切换逻辑
+├── strategies/                   # 策略模块
+│   ├── market_regime.py
+│   ├── mean_reversion.py
+│   └── trend_following.py
+├── analysis/                     # 分析与评估模块
+│   ├── backtester.py             # 回测逻辑
+│   ├── performance_report.py     # 绩效报告
+│   └── risk_dashboard.ipynb      # 风险可视化
+├── utils/
+│   └── indicators.py             # 技术指标封装
+├── logs/
+│   ├── trade_log.csv             # 交易日志
+│   └── drawdown_monitor.log      # 回撤监控日志
+└── README.md                     # 项目说明文档
