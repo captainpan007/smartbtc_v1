@@ -121,19 +121,18 @@ class RiskManager:
     #     return adjusted_size
 
     def validate_trade(self, order_size_base_currency, entry_price):
-        """检查交易是否允许（例如，是否因回撤暂停）以及资金是否足够"""
         if self.trading_paused:
             print("[Risk] 🚫 交易暂停（达到最大回撤）。")
             return False
 
-        # 检查是否有足够资金执行交易 (近似检查，未考虑手续费)
+        # 增加资金检查 (粗略)
         required_quote_amount = order_size_base_currency * entry_price
-        if required_quote_amount > self.current_balance:
-             print(f"[Risk] 🚫 资金不足。需要: {required_quote_amount:.2f}, 可用: {self.current_balance:.2f}")
-             return False
+        # 可以稍微宽松一点，比如检查是否大于可用余额的99%，为滑点和手续费留余地
+        if required_quote_amount > self.current_balance * 0.99:
+            print(f"[Risk] 🚫 资金不足 (预估)。需要: ~{required_quote_amount:.2f}, 可用: {self.current_balance:.2f}")
+            return False
 
-        # 可以添加其他验证，例如最大持仓限制等
-
+        # 可以添加其他验证...
         return True
 
     def reset_trading_pause(self):
